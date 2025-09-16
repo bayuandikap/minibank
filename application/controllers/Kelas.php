@@ -23,8 +23,10 @@ class Kelas extends CI_Controller {
 		$data['title'] = 'Master Kelas'; // Pass dynamic title
 		$data['userObject'] = (object) ['name' => 'Username'];
         $this->load->view('template/atas', $data);
-		$this->load->view('template/templateTable');
+		// $this->load->view('template/templateTable');
         // $this->load->view('kelas/list', $data);
         // $this->load->view('used/footer');
+
+		$this->load->view('kelas/list');
 	}
 }
