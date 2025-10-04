@@ -29,4 +29,17 @@ class Kelas extends CI_Controller {
 
 		$this->load->view('kelas/list');
 	}
+
+	public function add()
+	{
+		$post_data = $this->input->post();
+		$this->db->insert('kelas', $post_data);
+	}
+
+	public function update()
+	{
+		$post_data = $this->input->post();
+		$this->db->where('id', $post_data['idkelas']);
+		$this->db->update('kelas', $post_data);
+	}
 }

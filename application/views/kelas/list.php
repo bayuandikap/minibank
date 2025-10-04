@@ -843,6 +843,8 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalFormCreate">Tambah Kelas</button>
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalFormEdit">Edit Kelas</button>
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
@@ -945,6 +947,79 @@
           <!-- /.row -->
         </div>
         <!-- /.container-fluid -->
+
+        <div class="modal fade" id="modalFormCreate">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Form Create Kelas</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <form id="formCreate">
+                  <div class="form-group row">
+                    <label for="singkatanKelas" class="col-sm-2 col-form-label">Singkatan</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="singkatanKelas" id="singkatanKelasID" placeholder="Singkatan kelas">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="namaKelas" class="col-sm-2 col-form-label">Nama</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="namaKelas" id="namaKelasID" placeholder="Nama kelas">
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                <button id="btnSubmitCreate" type="button" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="modalFormEdit">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Form Edit Kelas</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+               <form id="formEdit">
+                  <input type="text" class="form-control" name="idKelas" id="dataID" value=1>
+                  <div class="form-group row">
+                    <label for="singkatanKelas" class="col-sm-2 col-form-label">Singkatan</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="singkatanKelas" id="singkatanKelasID" placeholder="Singkatan kelas">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="namaKelas" class="col-sm-2 col-form-label">Nama</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="namaKelas" id="namaKelasID" placeholder="Nama kelas">
+                    </div>
+                  </div>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="btnSubmitEdit" type="button" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
       </section>
       <!-- /.content -->
     </div>
@@ -961,35 +1036,34 @@
   <!-- ./wrapper -->
 
   <!-- jQuery -->
-  <script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js'); ?>"'); ?>"></script>
-<!-- <script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js'); ?>""></script> -->
-<!-- Bootstrap 4 -->
-<script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js'); ?>""></script>
-<script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js'); ?>""></script>
-<!-- DataTables  & Plugins -->
-<script src="<?php echo base_url('assets/plugins/datatables/jquery.dataTables.min.js'); ?>"' ); ?>
-    ">
-  </script>
-  <script src="<?php echo base_url('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js'); ?>""></script>
+  <script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js') ?>"></script>
+  <!-- <script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js'); ?>""></script> -->
+  <script src="<?php echo base_url('assets/plugins/jquery-validation/jquery.validate.min.js') ?>"></script>
+  <!-- Bootstrap 4 -->
+  <script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+  <script src=" <?php echo base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+  <!-- DataTables  & Plugins -->
+  <script src="<?php echo base_url('assets/plugins/datatables/jquery.dataTables.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js'); ?>"></script>
 
-<!-- <script src=" <?php echo base_url('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js'); ?>"'); ?>
+<!-- <script src=" <?php echo base_url('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js'); ?>"' ); ?>
     ">
   </script> -->
-  <script src="<?php echo base_url('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js'); ?>""></script>
+  <script src="<?php echo base_url('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js'); ?>"></script>
 
-<script src=" <?php echo base_url('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js'); ?>""></script>
-  <script src="<?php echo base_url('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js'); ?>""></script>
-<script src=" <?php echo base_url('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js'); ?>""></script>
-  <script src="<?php echo base_url('assets/plugins/jszip/jszip.min.js'); ?>""></script>
-<script src=" <?php echo base_url('assets/plugins/pdfmake/pdfmake.min.js'); ?>""></script>
-  <script src="<?php echo base_url('assets/plugins/pdfmake/vfs_fonts.js'); ?>""></script>
-<script src=" <?php echo base_url('assets/plugins/datatables-buttons/js/buttons.html5.min.js'); ?>""></script>
-  <script src="<?php echo base_url('assets/plugins/datatables-buttons/js/buttons.print.min.js'); ?>""></script>
-<script src=" <?php echo base_url('assets/plugins/datatables-buttons/js/buttons.colVis.min.js'); ?>""></script>
+<script src=" <?php echo base_url('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js'); ?>"></script>
+<script src=" <?php echo base_url('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/plugins/jszip/jszip.min.js'); ?>"></script>
+<script src=" <?php echo base_url('assets/plugins/pdfmake/pdfmake.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/plugins/pdfmake/vfs_fonts.js'); ?>"></script>
+<script src=" <?php echo base_url('assets/plugins/datatables-buttons/js/buttons.html5.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/plugins/datatables-buttons/js/buttons.print.min.js'); ?>"></script>
+<script src=" <?php echo base_url('assets/plugins/datatables-buttons/js/buttons.colVis.min.js'); ?>"></script>
   <!-- AdminLTE App -->
-  <script src="<?php echo base_url('assets/dist/js/adminlte.min.js'); ?>""></script>
+  <script src="<?php echo base_url('assets/dist/js/adminlte.min.js'); ?>"></script>
 <!-- AdminLTE for demo purposes -->
-<script src=" <?php echo base_url('assets/dist/js/demo.js'); ?>""></script>
+<script src=" <?php echo base_url('assets/dist/js/demo.js'); ?>"></script>
   <!-- Page specific script -->
   <script>
     $(function() {
@@ -1000,6 +1074,101 @@
         "autoWidth": false,
         // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
       }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+      $.validator.setDefaults({
+        submitHandler: function() {
+          alert("Form successful submitted!");
+        }
+      });
+
+      $('#formCreate').validate({
+        rules: {
+          singkatanKelas: {
+            required: true
+          },
+          namaKelas: {
+            required: true
+          },
+        },
+        messages: {
+          singkatanKelas: {
+            required: "Silahkan masukkan singkatan kelas"
+          },
+          namaKelas: {
+            required: "Silahkan masukkan nama kelas"
+          }
+        },
+        errorElement: 'span',
+        errorPlacement: function(error, element) {
+          error.addClass('invalid-feedback');
+          element.closest('.form-group').append(error);
+        },
+        highlight: function(element, errorClass, validClass) {
+          $(element).addClass('is-invalid');
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass('is-invalid');
+        }
+      });
+
+      $('#btnSubmitCreate').on('click', function() {
+        if ($('#formCreate').valid()) {
+          var singkatanKelas = $('#singkatanKelasID').val();
+          var namaKelas = $('#namaKelasID').val();
+          $.ajax({
+            url: "<?php echo site_url('kelas/add'); ?>",
+            type: "POST",
+            data: {
+              singkatan: singkatanKelas,
+              nama: namaKelas
+            },
+            dataType: "JSON",
+            success: function(data) {
+              if (data.status) {
+                alert('Data berhasil disimpan');
+                location.reload(); // Reload the page to see the new data
+              } else {
+                alert('Gagal menyimpan data');
+              }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+              console.log(textStatus, errorThrown);
+              alert('Error adding / update data');
+            }
+          });
+        }
+      });
+
+      $('#btnSubmitEdit').on('click', function() {
+        if ($('#formEdit').valid()) {
+          var idKelas = $('#dataID').val();
+          var singkatanKelas = $('#singkatanKelasEdit').val();
+          var namaKelas = $('#namaKelasEdit').val();
+          $.ajax({
+            url: "<?php echo base_url('kelas/update/1'); ?>",
+            type: "PUT",
+            data: {
+              idkelas: idKelas,
+              singkatan: singkatanKelas,
+              nama: namaKelas
+            },
+            dataType: "JSON",
+            success: function(data) {
+              if (data.status) {
+                alert('Data berhasil disimpan');
+                location.reload(); // Reload the page to see the new data
+              } else {
+                alert('Gagal menyimpan data');
+              }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+              console.log(textStatus, errorThrown);
+              alert('Error adding / update data');
+            }
+          });
+        }
+      });
+
     });
   </script>
 </body>
