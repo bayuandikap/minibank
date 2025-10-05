@@ -25,7 +25,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     // $routes->get('kelas', 'Kelas::index');
     $route['kelas'] = 'Kelas/index';
+    $route['kelas/data'] = 'Kelas/getData';
     $route['kelas/add'] = 'Kelas/add';
+    $route['kelas/update/(:num)'] = 'Kelas/update';
 
 /*
 |

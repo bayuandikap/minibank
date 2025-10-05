@@ -845,97 +845,18 @@
                 <div class="card-body">
                   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalFormCreate">Tambah Kelas</button>
                   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalFormEdit">Edit Kelas</button>
-                  <table id="example1" class="table table-bordered table-striped">
+                  <br>
+                  <br>
+                  <table id="dataKelas" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Rendering engine</th>
-                        <th>Browser</th>
-                        <th>Platform(s)</th>
-                        <th>Engine version</th>
-                        <th>CSS grade</th>
+                        <th></th>
+                        <th>Singkatan</th>
+                        <th>Nama</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>Trident</td>
-                        <td>Internet
-                          Explorer 4.0
-                        </td>
-                        <td>Win 95+</td>
-                        <td> 4</td>
-                        <td>X</td>
-                      </tr>
-                      <tr>
-                        <td>Gecko</td>
-                        <td>Firefox 1.0</td>
-                        <td>Win 98+ / OSX.2+</td>
-                        <td>1.7</td>
-                        <td>A</td>
-                      </tr>
-                      <tr>
-                        <td>Webkit</td>
-                        <td>Safari 1.2</td>
-                        <td>OSX.3</td>
-                        <td>125.5</td>
-                        <td>A</td>
-                      </tr>
-                      <tr>
-                        <td>Presto</td>
-                        <td>Opera 7.0</td>
-                        <td>Win 95+ / OSX.1+</td>
-                        <td>-</td>
-                        <td>A</td>
-                      </tr>
-                      <tr>
-                        <td>KHTML</td>
-                        <td>Konqureror 3.1</td>
-                        <td>KDE 3.1</td>
-                        <td>3.1</td>
-                        <td>C</td>
-                      </tr>
-                      <tr>
-                        <td>Tasman</td>
-                        <td>Internet Explorer 5.2</td>
-                        <td>Mac OS 8-X</td>
-                        <td>1</td>
-                        <td>C</td>
-                      </tr>
-                      <tr>
-                        <td>Misc</td>
-                        <td>NetFront 3.1</td>
-                        <td>Embedded devices</td>
-                        <td>-</td>
-                        <td>C</td>
-                      </tr>
-                      <tr>
-                        <td>Misc</td>
-                        <td>NetFront 3.4</td>
-                        <td>Embedded devices</td>
-                        <td>-</td>
-                        <td>A</td>
-                      </tr>
-                      <tr>
-                        <td>Misc</td>
-                        <td>Dillo 0.8</td>
-                        <td>Embedded devices</td>
-                        <td>-</td>
-                        <td>X</td>
-                      </tr>
-                      <tr>
-                        <td>Misc</td>
-                        <td>Links</td>
-                        <td>Text only</td>
-                        <td>-</td>
-                        <td>X</td>
-                      </tr>
-                      <tr>
-                        <td>Other browsers</td>
-                        <td>All others</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>U</td>
-                      </tr>
-                    </tbody>
+                    <tbody></tbody>
                   </table>
                 </div>
                 <!-- /.card-body -->
@@ -996,18 +917,18 @@
               </div>
 
               <div class="modal-body">
-               <form id="formEdit">
+                <form id="formEdit">
                   <input type="text" class="form-control" name="idKelas" id="dataID" value=1>
                   <div class="form-group row">
                     <label for="singkatanKelas" class="col-sm-2 col-form-label">Singkatan</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="singkatanKelas" id="singkatanKelasID" placeholder="Singkatan kelas">
+                      <input type="text" class="form-control" name="singkatanKelasEdit" id="singkatanKelasEdit" placeholder="Singkatan kelas">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="namaKelas" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" name="namaKelas" id="namaKelasID" placeholder="Nama kelas">
+                      <input type="text" class="form-control" name="namaKelasEdit" id="namaKelasEdit" placeholder="Nama kelas">
                     </div>
                   </div>
               </div>
@@ -1046,34 +967,136 @@
   <script src="<?php echo base_url('assets/plugins/datatables/jquery.dataTables.min.js'); ?>"></script>
   <script src="<?php echo base_url('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js'); ?>"></script>
 
-<!-- <script src=" <?php echo base_url('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js'); ?>"' ); ?>
-    ">
-  </script> -->
   <script src="<?php echo base_url('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js'); ?>"></script>
 
-<script src=" <?php echo base_url('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js'); ?>"></script>
+  <script src=" <?php echo base_url('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js'); ?>"></script>
   <script src="<?php echo base_url('assets/plugins/datatables-buttons/js/dataTables.buttons.min.js'); ?>"></script>
-<script src=" <?php echo base_url('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js'); ?>"></script>
+  <script src=" <?php echo base_url('assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js'); ?>"></script>
   <script src="<?php echo base_url('assets/plugins/jszip/jszip.min.js'); ?>"></script>
-<script src=" <?php echo base_url('assets/plugins/pdfmake/pdfmake.min.js'); ?>"></script>
+  <script src=" <?php echo base_url('assets/plugins/pdfmake/pdfmake.min.js'); ?>"></script>
   <script src="<?php echo base_url('assets/plugins/pdfmake/vfs_fonts.js'); ?>"></script>
-<script src=" <?php echo base_url('assets/plugins/datatables-buttons/js/buttons.html5.min.js'); ?>"></script>
+  <script src=" <?php echo base_url('assets/plugins/datatables-buttons/js/buttons.html5.min.js'); ?>"></script>
   <script src="<?php echo base_url('assets/plugins/datatables-buttons/js/buttons.print.min.js'); ?>"></script>
-<script src=" <?php echo base_url('assets/plugins/datatables-buttons/js/buttons.colVis.min.js'); ?>"></script>
+  <script src=" <?php echo base_url('assets/plugins/datatables-buttons/js/buttons.colVis.min.js'); ?>"></script>
   <!-- AdminLTE App -->
   <script src="<?php echo base_url('assets/dist/js/adminlte.min.js'); ?>"></script>
-<!-- AdminLTE for demo purposes -->
-<script src=" <?php echo base_url('assets/dist/js/demo.js'); ?>"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src=" <?php echo base_url('assets/dist/js/demo.js'); ?>"></script>
   <!-- Page specific script -->
   <script>
     $(function() {
-      $("#example1").DataTable({
+      $("#dataKelass").DataTable({
+        "ajax": {
+          "url": "<?php echo site_url('kelas/data'); ?>",
+          "dataSrc": ""
+        },
+        "serverSide": true,
         "ordering": false,
         "responsive": true,
         "lengthChange": false,
         "autoWidth": false,
         // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        "columns": [{
+            "data": "singkatan"
+          },
+          {
+            "data": "nama"
+          },
+          // {"data": 'action'},
+        ],
+        columnControl: true,
+        columnDefs: [{
+          searchable: false,
+          orderable: false,
+          targets: 0
+        }],
+        order: [
+          [1, 'asc']
+        ],
+        on: {
+          draw: (e) => {
+            let start = e.dt.page.info().start;
+
+            e.dt.column(0, {
+                page: 'current'
+              })
+              .nodes()
+              .each((cell, i) => {
+                cell.textContent = start + i + 1;
+              });
+          }
+        }
+      }).buttons().container().appendTo('#dataKelas_wrapper .col-md-6:eq(0)');
+
+      function fetchKelasData() {
+        return $.ajax({
+          url: "<?php echo site_url('kelas/data'); ?>",
+          dataSrc: "",
+          // type: "GET",
+          dataType: "JSON",
+          success: function(data) {
+            return data;
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+            alert('Error get data from ajax');
+          }
+        });
+      }
+
+      async function populateTable() {
+        var dataKelas = await fetchKelasData().then(function(data) {
+          return data;
+        });
+
+        var t = $('#dataKelas').DataTable({
+          data: dataKelas,
+          "columns": [{
+              "data": null
+            },
+            {
+              "data": "singkatan"
+            },
+            {
+              "data": "nama"
+            },
+            {
+              data: null,
+              render: function(data, type, row) {
+                return `<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalFormEdit" data-singkatan="'${row.singkatan}'" data-nama='${row.nama}'">Edit</button>`;
+              }
+            }
+          ],
+          "columnDefs": [{
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+          }],
+          "order": [
+            [1, 'asc']
+          ],
+          "render": function(data, type, full, meta) {
+            return meta.row + 1;
+          }
+        });
+        t.on('order.dt search.dt', function() {
+          t.column(0, {
+            search: 'applied',
+            order: 'applied'
+          }).nodes().each(function(cell, i) {
+            cell.innerHTML = i + 1;
+          });
+        }).draw();
+      }
+
+      $(document).ready(function() {
+        populateTable();
+      });
+
+      function redrawTable() {
+        $('#dataKelas').dataTable().fnDestroy();
+        populateTable();
+      }
 
       $.validator.setDefaults({
         submitHandler: function() {
@@ -1124,16 +1147,20 @@
             },
             dataType: "JSON",
             success: function(data) {
-              if (data.status) {
+              if (data.success) {
                 alert('Data berhasil disimpan');
-                location.reload(); // Reload the page to see the new data
+                // populateTable();
+                redrawTable();
+                $('#modalFormCreate').modal('hide');
+                // location.reload(); // Reload the page to see the new data
               } else {
+                console.log(data);
                 alert('Gagal menyimpan data');
               }
             },
             error: function(jqXHR, textStatus, errorThrown) {
               console.log(textStatus, errorThrown);
-              alert('Error adding / update data');
+              alert('Error adding data');
             }
           });
         }
@@ -1144,9 +1171,10 @@
           var idKelas = $('#dataID').val();
           var singkatanKelas = $('#singkatanKelasEdit').val();
           var namaKelas = $('#namaKelasEdit').val();
+          var url = "<?php echo site_url('kelas/update/'); ?>" + idKelas;
           $.ajax({
-            url: "<?php echo base_url('kelas/update/1'); ?>",
-            type: "PUT",
+            url: url,
+            type: "POST",
             data: {
               idkelas: idKelas,
               singkatan: singkatanKelas,
@@ -1163,12 +1191,22 @@
             },
             error: function(jqXHR, textStatus, errorThrown) {
               console.log(textStatus, errorThrown);
-              alert('Error adding / update data');
+              alert('Error update data');
             }
           });
         }
       });
 
+    });
+
+    $('#modalFormEdit').on('show.bs.modal', function(event) {
+      var button = $(event.relatedTarget); // Button that triggered the modal
+      var singkatan = button.data('singkatan'); // Extract info from data-* attributes
+      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+      var modal = $(this);
+      modal.find('.modal-title').text('Edit Kelas: ' + singkatan);
+      // modal.find('.modal-body input').val(recipient)
     });
   </script>
 </body>

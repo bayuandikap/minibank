@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Kelas extends CI_Controller {
+class Kelas extends CI_Controller
+{
 
 	/**
 	 * Index Page for this controller.
@@ -22,24 +23,39 @@ class Kelas extends CI_Controller {
 	{
 		$data['title'] = 'Master Kelas'; // Pass dynamic title
 		$data['userObject'] = (object) ['name' => 'Username'];
-        $this->load->view('template/atas', $data);
+		$this->load->view('template/atas', $data);
 		// $this->load->view('template/templateTable');
-        // $this->load->view('kelas/list', $data);
-        // $this->load->view('used/footer');
+		// $this->load->view('kelas/list', $data);
+		// $this->load->view('used/footer');
 
 		$this->load->view('kelas/list');
+	}
+
+	public function getData()
+	{
+		$query = $this->db->get('kelas');
+		$result = $query->result_array();
+		echo json_encode($result);
 	}
 
 	public function add()
 	{
 		$post_data = $this->input->post();
 		$this->db->insert('kelas', $post_data);
+
+		echo json_encode(
+			array(
+				'success' => true,
+				'message' => 'Data Berhasil Disimpan!'
+			)
+		);
 	}
 
 	public function update()
 	{
 		$post_data = $this->input->post();
-		$this->db->where('id', $post_data['idkelas']);
+		echo json_encode($post_data);
+		$this->db->where('idkelas', $post_data['idkelas']);
 		$this->db->update('kelas', $post_data);
 	}
 }
